@@ -19,7 +19,7 @@ namespace Core.Scripts
             if (entityQuery.CalculateEntityCount() < spawnAmount)
             {
                 var entity = entityCommandBuffer.Instantiate(entitySpawnerComponent.PlayerPrefab);
-                
+
                 entityCommandBuffer.SetComponent(entity, new Speed
                 {
                     Value = randomComponent.ValueRW.Random.NextFloat(1f, 5f)
@@ -28,3 +28,7 @@ namespace Core.Scripts
         }
     }
 }
+        
+        
+        
+        
