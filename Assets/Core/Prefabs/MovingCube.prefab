@@ -115,8 +115,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3547242610692454103}
   - component: {fileID: 3547242610692454098}
-  - component: {fileID: 3547242610692454097}
   - component: {fileID: -5539991283540366863}
+  - component: {fileID: -6794333380465089133}
   m_Layer: 0
   m_Name: MovingCube
   m_TagString: Untagged
@@ -153,22 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedValue: 4
---- !u!114 &3547242610692454097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3547242610692454104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 348bbc73eb304b04c82238bdb2298c71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    x: 1
-    y: 0
-    z: 1
 --- !u!114 &-5539991283540366863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,3 +165,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afa3459855146f2b2cb71e2fc12e64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6794333380465089133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547242610692454104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348bbc73eb304b04c82238bdb2298c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    x: 0
+    y: 0
+    z: 0
