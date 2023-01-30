@@ -25,6 +25,7 @@ namespace Core.Scripts.ZombiesExample.Systems
         public void OnUpdate(ref SystemState state)
         {
             state.Enabled = false;
+            
             var graveyardEntity = SystemAPI.GetSingletonEntity<GraveyardProperties>();
             var graveyard = SystemAPI.GetAspectRW<GraveyardAspect>(graveyardEntity);
 

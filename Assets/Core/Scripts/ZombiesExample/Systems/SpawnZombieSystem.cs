@@ -1,25 +1,26 @@
 ﻿using Core.Scripts.ZombiesExample.ComponentsAndTags;
+using Core.Scripts.ZombiesExample.Extensions;
 using Unity.Entities;
 using Unity.Burst;
+using Unity.Physics;
+using Unity.Transforms;
 
 namespace Core.Scripts.ZombiesExample.Systems
 {
-    [BurstCompile]
     public partial struct SpawnZombieSystem : ISystem
     {
-        [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
         }
 
-        [BurstCompile]
         public void OnDestroy(ref SystemState state)
         {
         }
 
-        [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
+            state.CompleteDependency();
+            
             var deltaTime = SystemAPI.Time.DeltaTime;
             var ecbSingleton = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>()
                 .CreateCommandBuffer(state.WorldUnmanaged);
@@ -32,7 +33,6 @@ namespace Core.Scripts.ZombiesExample.Systems
         }
     }
 
-    [BurstCompile]
     public partial struct SpawnZombieJob : IJobEntity
     {
         public float DeltaTime;
@@ -45,6 +45,20 @@ namespace Core.Scripts.ZombiesExample.Systems
             
             graveyard.ZombieSpawnTimer = graveyard.ZombieSpawnRate;
             var newZombie = Ecb.Instantiate(graveyard.ZombiePrefab);
+
+            var newZombieTransform = graveyard.GetZombieSpawnPoint();
+            Ecb.SetComponent(newZombie, new LocalTransform
+            {
+                Position = newZombieTransform.Position,
+                Rotation = newZombieTransform.Rotation,
+                Scale = newZombieTransform.Scale,
+            });
+
+            var zombieHeading = MathHelpers.GetHeading(newZombieTransform.Position, graveyard.Position);
+            Ecb.SetComponent(newZombie, new ZombieHeading
+            {
+                Value = zombieHeading
+            });
         }
     }
 }

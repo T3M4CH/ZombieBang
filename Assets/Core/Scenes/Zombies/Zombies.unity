@@ -135,8 +135,10 @@ GameObject:
   - component: {fileID: 1251548893}
   - component: {fileID: 1251548892}
   - component: {fileID: 1251548891}
+  - component: {fileID: 1251548895}
+  - component: {fileID: 1251548896}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Brain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,7 +185,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c1c06383fc3e2a49a5d06b7df3c4570, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -228,6 +230,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1251548895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251548890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe21f130fc444f1948a7469ba607ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+--- !u!114 &1251548896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251548890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe5abb9f74c4a7c9afb3d3fc54a7dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Cooldown>k__BackingField: 5
+  <BulletPrefab>k__BackingField: {fileID: 7596036444594243459, guid: e60e26cb9407e3d46a5515797fe3049f,
+    type: 3}
 --- !u!1 &1678441521
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,9 +294,9 @@ MonoBehaviour:
   TombstonePrefab: {fileID: 2812077277831460725, guid: 5548ec7574c5ef64e9ec87e2554d8f64,
     type: 3}
   RandomSeed: 228
-  ZombiePrefab: {fileID: 1548127750302782818, guid: dd262722b75aef048a4c6d43eb20f4a9,
+  ZombiePrefab: {fileID: 1548127750302782818, guid: 9974c6dfec02e8049acd223d6c75a68c,
     type: 3}
-  ZombieSpawnRate: 3
+  ZombieSpawnRate: 5
 --- !u!4 &1678441523
 Transform:
   m_ObjectHideFlags: 0
